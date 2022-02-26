@@ -2,9 +2,13 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import hamburger from '../images/hamburger.png'
 import StyledNavLinks from '../styles/NavLinks.styled'
+import Filter from './Filter'
 
 const NavLinks = (props) => {
   const {numberOfPastRides, numberOfUpComingRides} = props;
+  const displayFilter = () => {
+    return <Filter/>
+  }
   return (
       <StyledNavLinks>
         <section>
@@ -14,7 +18,7 @@ const NavLinks = (props) => {
         </section>
 
         <aside>
-          <a href='/'><img src={hamburger} alt='hamburger' img/></a> <p>filters</p>
+          <img src={hamburger} alt='hamburger' img onClick={displayFilter}/><p>filters</p>
         </aside>
 
       </StyledNavLinks>      

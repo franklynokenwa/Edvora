@@ -3,14 +3,7 @@ import Home from './components/Home';
 import GlobalStyles from './styles/Global.styled';
 import axios from 'axios';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from 'react-router-dom'
-import Rides from './components/Rides';
-import Filter from './components/Filter';
+import {Routes,Route} from 'react-router-dom'
 import ApiDataContext from './components/DataContext'
 import UpcomingRides from './components/UpcomingRides';
 import PastRides from './components/PastRides';

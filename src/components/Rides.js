@@ -1,12 +1,5 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import StyledRide from '../styles/Rides.styled'
-import mapImage from '../images/map.png'
-import NavBar from './NavBar'
-import NavLinks from './NavLinks'
-import Home from './Home'
-import ApiDataContext from './DataContext'
-import { DateTime } from "luxon";
-
 
 const Rides = (props) => {
   const {rides} = props;

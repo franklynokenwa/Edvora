@@ -8,6 +8,12 @@ const StyledNavBar = styled.header `
     justify-content: space-between;
     color: white;
 
+     Link h1{
+        text-decoration: none;
+        color: red;
+
+    }
+
     div{
         display: flex;
         justify-content: space-around;
