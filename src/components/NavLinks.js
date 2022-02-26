@@ -1,23 +1,16 @@
 import React from 'react'
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import hamburger from '../images/hamburger.png'
-import Rides from './Rides'
-import Filter from './Filter'
 import StyledNavLinks from '../styles/NavLinks.styled'
 
-const NavLinks = () => {
+const NavLinks = (props) => {
+  const {numberOfPastRides, numberOfUpComingRides} = props;
   return (
       <StyledNavLinks>
-        
         <section>
           <p><Link to="/nearest-rides">Nearest rides</Link></p>
-          <p><Link to="/upcoming-rides">Upcoming rides (4) </Link></p>
-          <p><Link to="/past-rides">Past rides (2) </Link></p>
+          <p><Link to="/upcoming-rides">Upcoming rides ({numberOfUpComingRides}) </Link></p>
+          <p><Link to="/past-rides">Past rides ({numberOfPastRides}) </Link></p>
         </section>
 
         <aside>
@@ -27,5 +20,10 @@ const NavLinks = () => {
       </StyledNavLinks>      
   )
 }
+
+NavLinks.defaultProps = ({
+  numberOfPastRides : '0',
+  numberOfUpComingRides : '0'
+})
 
 export default NavLinks

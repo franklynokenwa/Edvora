@@ -13,6 +13,7 @@ const StyledRide = styled.section`
 
     img{
         width:19rem;
+        height: 10.5rem;
     }
 
     section{
@@ -24,9 +25,9 @@ const StyledRide = styled.section`
         text-align:left;
         position: relative;
         top: -1rem;
-        height: 10.5rem;
+        height: 11.5rem;
         color: white;
-        width: 19.8rem;        
+        width: 19.8rem;
     }
     aside{
         display: flex;

@@ -14,6 +14,7 @@ import Filter from './components/Filter';
 import ApiDataContext from './components/DataContext'
 import UpcomingRides from './components/UpcomingRides';
 import PastRides from './components/PastRides';
+import NearestRides from './components/NearestRides';
 
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
           <GlobalStyles/>
           <Routes>
             <Route index path="/" element={<Home/>}></Route>
-            <Route path="/nearest-rides" element={<Rides/>}></Route>
+            <Route path="/nearest-rides" element={<NearestRides/>}></Route>
             <Route path="/upcoming-rides" element={<UpcomingRides/>}></Route>
             <Route path="/past-rides" element={<PastRides/>}></Route>
           </Routes>
