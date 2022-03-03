@@ -20,7 +20,7 @@ const Rides = (props) => {
                     return <span>{`${stationPaths},`}</span>
                   })} </p>
                   <p>Date : <span>{date}</span> </p>
-                  <p>Distance : <span>0222222222</span> </p>
+                  <p>Distance : <span>0</span> </p>
                 </div>
               </section>
               

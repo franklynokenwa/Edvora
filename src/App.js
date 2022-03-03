@@ -7,10 +7,13 @@ import ApiDataContext from './components/DataContext'
 import UpcomingRides from './components/UpcomingRides';
 import PastRides from './components/PastRides';
 import NearestRides from './components/NearestRides';
+import UserDataContext from './components/UserDataContext';
 
 
 function App() {
-  const [rideData, setRideData] = useState([])
+  const [rideData, setRideData] = useState([]);
+  const [userData, setUserData] = useState()
+
 
     useEffect(() => {
       const getData = async () =>{
@@ -20,22 +23,33 @@ function App() {
         setRideData(response.data)
       })
     }
+    const getUserData = async () =>{
+      await axios.get("https://assessment.api.vweb.app/user").then(response => {
+      console.log(response.data);
+      console.log('success');
+      setUserData(response.data)
+
+    })
+  }
       getData();
+      getUserData();
 
     }, []);     
-    
+     
 
   return (
       <ApiDataContext.Provider value={rideData}>
-        <main className="App">
-          <GlobalStyles/>
-          <Routes>
-            <Route index path="/" element={<Home/>}></Route>
-            <Route path="/nearest-rides" element={<NearestRides/>}></Route>
-            <Route path="/upcoming-rides" element={<UpcomingRides/>}></Route>
-            <Route path="/past-rides" element={<PastRides/>}></Route>
-          </Routes>
-        </main>
+        <UserDataContext.Provider value={userData}>
+          <main className="App">
+            <GlobalStyles/>
+            <Routes>
+              <Route index path="/" element={<Home/>}></Route>
+              <Route path="/nearest-rides" element={<NearestRides/>}></Route>
+              <Route path="/upcoming-rides" element={<UpcomingRides/>}></Route>
+              <Route path="/past-rides" element={<PastRides/>}></Route>
+            </Routes>
+          </main>
+        </UserDataContext.Provider>
       </ApiDataContext.Provider>
     
   );

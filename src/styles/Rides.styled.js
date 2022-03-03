@@ -29,6 +29,12 @@ const StyledRide = styled.section`
         color: white;
         width: 19.8rem;
     }
+    div p{
+        color:#959595;
+    }
+    div span{
+        color: white;
+    }
     aside{
         display: flex;
         justify-content: space-between;
