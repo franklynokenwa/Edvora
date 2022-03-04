@@ -1,9 +1,12 @@
 import React from 'react';
 import StyledFilter from '../styles/Filter.styled';
+import ApiDataContext from './DataContext'
 
-const Filter = () => {
+
+const Filter = (props) => {
+  const {filterDisplay} = props;
   return (
-    <StyledFilter>
+    <StyledFilter style={{visibility: filterDisplay}}>
         <p>Filters</p>
         <hr/>
         <form>

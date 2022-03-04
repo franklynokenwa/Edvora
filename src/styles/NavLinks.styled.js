@@ -15,7 +15,7 @@ const StyledNavLinks = styled.section`
         align-items: center;
     }
 
-    p a, aside a{
+    p a{
         text-decoration: none;
         color: #D0CBCB;
 
@@ -26,13 +26,6 @@ const StyledNavLinks = styled.section`
     }
     section p a:hover{
         color: #FFFFFF;
-    }
-
-    aside{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 4rem;
     }
 
 `

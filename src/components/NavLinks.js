@@ -1,14 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Link} from 'react-router-dom'
-import hamburger from '../images/hamburger.png'
 import StyledNavLinks from '../styles/NavLinks.styled'
-import Filter from './Filter'
+import FilterIcon from './FilterIcon'
+
 
 const NavLinks = (props) => {
   const {numberOfPastRides, numberOfUpComingRides} = props;
-  const displayFilter = () => {
-    return <Filter/>
-  }
+
+  
   return (
       <StyledNavLinks>
         <section>
@@ -16,11 +15,9 @@ const NavLinks = (props) => {
           <p><Link to="/upcoming-rides">Upcoming rides ({numberOfUpComingRides}) </Link></p>
           <p><Link to="/past-rides">Past rides ({numberOfPastRides}) </Link></p>
         </section>
-
-        <aside>
-          <img src={hamburger} alt='hamburger' img onClick={displayFilter}/><p>filters</p>
-        </aside>
-
+        <div>
+          <FilterIcon/>
+        </div>
       </StyledNavLinks>      
   )
 }

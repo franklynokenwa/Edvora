@@ -1,19 +1,19 @@
 import styled from 'styled-components'
 
-const StyledFilter = styled.section`
+const StyledFilter = styled.div`
     background-color: #0A0A0A;
     color: #D0CBCB;
-    width: 10rem;
-    margin-left: 3rem;
     display: flex;
+    width: 15rem;
     justify-content: center;
     flex-direction: column;
     border-radius: 10px;
-    position: relative;
     margin-top: 3rem;
+    position: absolute;
+    right:2rem;
 
     p{
-        margin-left: -3.5rem;
+        text-align: center;
     }
 
     hr{
