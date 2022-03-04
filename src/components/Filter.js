@@ -1,12 +1,35 @@
-import React,{useContext} from 'react';
+import React,{useState,useContext} from 'react';
 import StyledFilter from '../styles/Filter.styled';
 import ApiDataContext from './DataContext'
+import Rides from './Rides';
 
 
 const Filter = (props) => {
+  const [selectedState, setSelectedState] = useState()
+  const [selectedCity, setSelectedCity] = useState()
+
+
   const {filterDisplay} = props;
   const rideData = useContext(ApiDataContext)
-  console.log(rideData);
+
+  const getSelectedState = (event)=>{
+    setSelectedState(event.target.value)
+    console.log(selectedState);
+
+  }
+  const getSelectedCity = (event)=>{
+    setSelectedCity(event.target.value)
+    console.log(selectedCity);
+
+  }
+
+  const filterByState = rideData.filter((data) => {
+    return data.state.includes(selectedState)
+  })
+
+  const filterByCity = rideData.filter((data) => {
+    return data.city.includes(selectedCity)
+  })
 
 
   return (
@@ -14,23 +37,24 @@ const Filter = (props) => {
         <p>Filters</p>
         <hr/>
         <form>
-            <select>
+            <select onClick={getSelectedState}>
               {rideData.map((items) => {
-                const {state} = items
+                const {state, station_path} = items
                 return(
-                  <option value={state}>{state}</option>
+                  <option key={station_path} value={state}>{state}</option>
                 )
               })}
             </select>
-            <select>
+            <select onClick={getSelectedCity}>
               {rideData.map((items) => {
-                const {city} = items
+                const {city, date} = items
                 return(
-                  <option value={city}>{city}</option>
+                  <option key={date} value={city}>{city}</option>
                 )
               })}
             </select>
         </form>
+        <Rides  rides={filterByCity}/>
     </StyledFilter>
   )
 }

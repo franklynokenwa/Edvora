@@ -8,7 +8,6 @@ const Rides = (props) => {
     <div>
         {rides.map((item) =>{
           const {id, origin_station_code, station_path,map_url, date} = item
-          console.log(rides.length);
           return(
             <StyledRide key={id}>
               <section>

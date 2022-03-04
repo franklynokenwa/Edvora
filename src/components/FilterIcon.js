@@ -11,12 +11,10 @@ const FilterIcon = () => {
 
     const displayFilter = (event) => {
         if (toggle === true) {
-         console.log('correct'); 
          setFilterDisplay('visible')
          setToggle(false)
          
         }else if(toggle === false){
-          console.log('incorrect');
           setFilterDisplay('hidden')
           setToggle(true)
         }
