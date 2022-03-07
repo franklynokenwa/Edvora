@@ -8,9 +8,10 @@ import UpcomingRides from './components/UpcomingRides';
 import PastRides from './components/PastRides';
 import NearestRides from './components/NearestRides';
 import UserDataContext from './components/UserDataContext';
+import Rides from './components/Rides';
 
 
-function App() {
+function App(dataFromChild) {
   const [rideData, setRideData] = useState([]);
   const [userData, setUserData] = useState()
 

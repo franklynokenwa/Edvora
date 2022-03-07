@@ -7,7 +7,7 @@ const Rides = (props) => {
   return (
     <div>
         {rides.map((item) =>{
-          const {id, origin_station_code, station_path,map_url, date} = item
+          const {id, origin_station_code, station_path,map_url, date, city, state} = item
           return(
             <StyledRide key={id}>
               <section>
@@ -24,8 +24,8 @@ const Rides = (props) => {
               </section>
               
               <aside>
-                <p>City Name</p>
-                <p>State Name</p>
+                <p>{city}</p>
+                <p>{state}</p>
               </aside>
             </StyledRide>
           )

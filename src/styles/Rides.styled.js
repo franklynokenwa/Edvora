@@ -42,13 +42,14 @@ const StyledRide = styled.section`
     aside p{
         background-color: #0A0A0A;
         height: 2rem;
-        width: 6rem;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align:center;
         border-radius: 15px;
         margin-left:1rem ;
+        padding-left: 1rem;
+        padding-right:1rem;
     }
 `
 
