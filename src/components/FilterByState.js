@@ -33,7 +33,7 @@ const FilterByState = () => {
     <div>
         <NavBar/>
         <NavLinks/>
-        <Rides rides={filterByState}/>
+        <p>Testing</p>
     </div>
   )
 }

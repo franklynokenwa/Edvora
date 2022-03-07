@@ -2,6 +2,8 @@ import React,{useState,useContext} from 'react';
 import StyledFilter from '../styles/Filter.styled';
 import ApiDataContext from './DataContext'
 import Rides from './Rides';
+import {Link} from 'react-router-dom'
+
 
 
 const Filter = (props) => {
@@ -37,14 +39,18 @@ const Filter = (props) => {
         <p>Filters</p>
         <hr/>
         <form>
+        <Link to="/rides/state">
             <select onClick={getSelectedState}>
+            
               {rideData.map((items) => {
                 const {state, station_path} = items
                 return(
-                  <option key={station_path} value={state}>{state}</option>
+                  
+                  <option key={station_path} value={state}> {state}
+                  </option>
                 )
-              })}
-            </select>
+              })} 
+            </select></Link>
             <select onClick={getSelectedCity}>
               {rideData.map((items) => {
                 const {city, date} = items
@@ -54,7 +60,6 @@ const Filter = (props) => {
               })}
             </select>
         </form>
-        <Rides  rides={filterByCity}/>
     </StyledFilter>
   )
 }

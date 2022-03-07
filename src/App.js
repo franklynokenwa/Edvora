@@ -9,7 +9,7 @@ import PastRides from './components/PastRides';
 import NearestRides from './components/NearestRides';
 import UserDataContext from './components/UserDataContext';
 import Rides from './components/Rides';
-
+import FilterByState from './components/FilterByState';
 
 function App(dataFromChild) {
   const [rideData, setRideData] = useState([]);
@@ -48,6 +48,7 @@ function App(dataFromChild) {
               <Route path="/nearest-rides" element={<NearestRides/>}></Route>
               <Route path="/upcoming-rides" element={<UpcomingRides/>}></Route>
               <Route path="/past-rides" element={<PastRides/>}></Route>
+              <Route path="/rides/state" element={<FilterByState/>}></Route>
             </Routes>
           </main>
         </UserDataContext.Provider>
